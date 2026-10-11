@@ -1,0 +1,39 @@
+# 这个仓库同时装两样东西：
+#   1) public\  ← Cloudflare 部署的静态站（构建命令留空，输出目录填 public）
+#   2) docs\ tools\ ← 手册与校验脚本（留在仓库里可以，但不会被打包上线，因为部署目录只指向 public）
+
+# ── 依赖与构建产物（本项目当前不需要，先占位防止将来误提交）──
+node_modules/
+dist/
+.cache/
+
+# ── 本地环境与密钥（绝对不要提交）──
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.ssh/
+wrangler.toml.local
+.dev.vars
+
+# ── 系统与编辑器噪声 ──
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/
+
+# ── 临时与日志 ──
+*.log
+*.tmp
+*.bak
+tmp/
+temp/
+
+# ── 渲染与音频中间产物（宣传片阶段会大量产生，不进仓库）──
+renders/
+assets/audio/voice/
+*final*.mp4
